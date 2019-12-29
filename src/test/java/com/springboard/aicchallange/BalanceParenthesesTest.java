@@ -35,4 +35,61 @@ public class BalanceParenthesesTest {
         assertEquals("Y ()(())", outContent.toString().trim());
         assertEquals("", errContent.toString().trim());
     }
+
+    @Test
+    public void test2() {
+        balanceParentheses.printOutput("([ssd]][[))cffsf{{]]]");
+        assertEquals("N ([]][[)){{]]]", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test3() {
+        balanceParentheses.printOutput("");
+        assertEquals("N ".trim(), outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test4() {
+        balanceParentheses.printOutput("[()]{}{[()()]()}");
+        assertEquals("Y [()]{}{[()()]()}".trim(), outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test5() {
+        balanceParentheses.printOutput("[(])");
+        assertEquals("N [(])".trim(), outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test6() {
+        balanceParentheses.printOutput("{[()]}");
+        assertEquals("Y {[()]}".trim(), outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test7() {
+        balanceParentheses.printOutput("{[(])}");
+        assertEquals("N {[(])}".trim(), outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test8() {
+        balanceParentheses.printOutput("{{[[(())]]}}");
+        assertEquals("Y {{[[(())]]}}".trim(), outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test9() {
+        balanceParentheses.printOutput("{(([])[])[]]}");
+        assertEquals("N {(([])[])[]]}".trim(), outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
 }

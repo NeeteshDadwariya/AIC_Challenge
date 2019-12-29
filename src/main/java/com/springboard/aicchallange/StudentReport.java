@@ -53,14 +53,29 @@ public class StudentReport {
         List<Report> reportData = new ArrayList<>();
         students.forEach(s -> {
             List<Map<String, Object>> subjects = (List<Map<String, Object>>) s.get("subject");
-            subjects.forEach(sub -> {
+
+            //Create report line per subject basis.
+            if (subjects != null && !subjects.isEmpty()) {
+                subjects.forEach(sub -> {
+                    Report report = new Report();
+                    report.setEnrollment((String) s.get("enrollment"));
+                    report.setName((String) s.get("name"));
+                    report.setCode((String) sub.get("code"));
+                    report.setGrade((String) sub.get("grade"));
+                    reportData.add(report);
+                });
+            }
+            //If the subjects are empty, then create report line only with student details.
+            else {
                 Report report = new Report();
                 report.setEnrollment((String) s.get("enrollment"));
                 report.setName((String) s.get("name"));
-                report.setCode((String) sub.get("code"));
-                report.setGrade((String) sub.get("grade"));
+
+                //Setting '-' for empty fields as not given in question.
+                report.setCode("-");
+                report.setGrade("-");
                 reportData.add(report);
-            });
+            }
         });
         return reportData;
     }

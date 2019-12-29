@@ -31,7 +31,7 @@ public class BalanceParentheses {
         if (balancingResult.getKey()) {
             System.out.println("Y " + balancingResult.getValue());
         } else {
-            System.out.println("N" + balancingResult.getValue());
+            System.out.println("N " + balancingResult.getValue());
         }
     }
 
@@ -75,7 +75,11 @@ public class BalanceParentheses {
                     if (OPENING_BRACKETS.charAt(closedBracketIndex) == lastElement) {
                         //Popping from stack. This bracket has matching parentheses.
                         stack.pop();
+                    } else {
+                        stack.push(ch);
                     }
+                } else {
+                    stack.push(ch);
                 }
             }
 

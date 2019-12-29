@@ -1,0 +1,14 @@
+{
+  "report": [
+    {
+      "enrollment": "rit2011001",
+      "name": "Julia",
+      "subject": [
+        {
+          "code": "DSA",
+          "grade": "A"
+        }
+      ]
+    }
+  ]
+}
