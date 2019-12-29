@@ -1,4 +1,4 @@
-package aicchallange;
+package com.springboard.aicchallange;
 
 import javafx.util.Pair;
 

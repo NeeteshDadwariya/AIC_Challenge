@@ -1,13 +1,13 @@
 -------------------------------------------------------------------------------
-Test set: com.aicchallange.BalanceParenthesesTest
+Test set: com.springboard.aicchallange.BalanceParenthesesTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.056 sec <<< FAILURE!
-test1(com.aicchallange.BalanceParenthesesTest)  Time elapsed: 0.01 sec  <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.054 sec <<< FAILURE!
+test1(com.springboard.aicchallange.BalanceParenthesesTest)  Time elapsed: 0.017 sec  <<< FAILURE!
 org.junit.ComparisonFailure: expected:<Y ()(())[]> but was:<Y ()(())[
 ]>
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
-	at com.aicchallange.BalanceParenthesesTest.test1(BalanceParenthesesTest.java:36)
+	at com.springboard.aicchallange.BalanceParenthesesTest.test1(BalanceParenthesesTest.java:36)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

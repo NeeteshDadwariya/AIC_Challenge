@@ -1,4 +1,4 @@
-package aicchallange;
+package com.springboard.aicchallange;
 
 import java.util.Scanner;
 import java.util.function.Predicate;

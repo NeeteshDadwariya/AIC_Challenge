@@ -1,6 +1,6 @@
-package com.aicchallange;
+package com.springboard.aicchallange;
 
-import aicchallange.BalanceParentheses;
+import com.springboard.aicchallange.BalanceParentheses;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,7 +33,7 @@ public class BalanceParenthesesTest {
     @Test
     public void test1() {
         balanceParentheses.printOutput("(4+8)/(5*(4+4))");
-        assertEquals("Y ()(())", outContent.toString());
-        assertEquals("", errContent.toString());
+        assertEquals("Y ()(())", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
     }
 }
