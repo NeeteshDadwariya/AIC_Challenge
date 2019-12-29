@@ -5,9 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.MockitoAnnotations;
 
-import javax.script.ScriptException;
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
@@ -35,9 +33,93 @@ public class ValidateEmailTest {
     }
 
     @Test
-    public void test1() throws ScriptException {
+    public void test1() {
         validateEmail.printResult("neeteshdadwariya@gmail.com");
         assertEquals("Valid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test2() {
+        validateEmail.printResult("1neeteshdadwariya@gmail.com");
+        assertEquals("Invalid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test3() {
+        validateEmail.printResult("neetesh.dadwariya@gmail.com");
+        assertEquals("Invalid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test4() {
+        validateEmail.printResult("neetesh%dadwariya@gmail.com");
+        assertEquals("Invalid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test5() {
+        validateEmail.printResult("neeteshdadwariya@gmail.comm");
+        assertEquals("Invalid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test6() {
+        validateEmail.printResult("neeteshdadwariya@gmail.co.in");
+        assertEquals("Valid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test7() {
+        validateEmail.printResult("neeteshdadwariya@gmail.com.in");
+        assertEquals("Valid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test8() {
+        validateEmail.printResult("neetesh511dadwariya@gmail.com");
+        assertEquals("Valid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test9() {
+        validateEmail.printResult("neeteshdadwariya@gmail2345.com");
+        assertEquals("Valid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test10() {
+        validateEmail.printResult("neeteshdadwariya@gmail.com1234");
+        assertEquals("Invalid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test11() {
+        validateEmail.printResult("");
+        assertEquals("Invalid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test12() {
+        validateEmail.printResult("neetesh");
+        assertEquals("Invalid", outContent.toString().trim());
+        assertEquals("", errContent.toString().trim());
+    }
+
+    @Test
+    public void test13() {
+        validateEmail.printResult("@gmail.com");
+        assertEquals("Invalid", outContent.toString().trim());
         assertEquals("", errContent.toString().trim());
     }
 }

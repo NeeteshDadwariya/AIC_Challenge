@@ -22,10 +22,16 @@ public class ValidateEmail {
     public void printResult(String email) {
         String segments[] = email.split(AT_THE_RATE);
 
+        //If the string has not 2 segments after split with '@', then it is invalid.
+        if (segments.length != 2) {
+            System.out.println(INVALID);
+            return;
+        }
+
         boolean isValidFirstSegment = validateFirstSegment().test(segments[0]);
         boolean isValidSecondSegment = validateSecondSegment().test(segments[1]);
 
-        if (segments.length != 2 || !isValidFirstSegment || !isValidSecondSegment) {
+        if (!isValidFirstSegment || !isValidSecondSegment) {
             System.out.println(INVALID);
         } else {
             System.out.println(VALID);
